@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MITA - M&amacr;ori Pronunciation</title>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+  </head>
+
+  <body>
+    <div class="grid">
+        <div class="nav-container">
+            <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li class=""><a href="/">K&omacr;rero</a>
+            </li>
+
+          <!-- For when I link projects together
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Projects</a>
+            <div class="dropdown-content">
+              <a href="https://kyokopl.github.io/projects/minesweeper/index.html">Minesweeper</a>   
+              <a href="https://kyokopl.github.io/projects/js-calculator/index.html">Calculator</a> 
+              <a href="https://kyokopl.github.io/projects/index.html">Harikoa</a>    
+            </div>
+          </li> -->
+
+            <p class="navbar-text">MITA o Te Reo</p>
+            </ul>
+        </div>
+
+      <!-- banner image etc needs config, want to have a list of images and slideshow through them? or logo?
+          <section id="banner" class="align-centre" style="background-image:url(images/cover.JPG)" alt="Baring Head Wellington View">
+        <div class="inner">
+          <h3 class="special">Nau mai, haere mai!</h3>
+        </div>
+      </section> -->
+  
+        <div class="row">
+            <div class="col-12">
+            <h5>MITA is a tool to help with pronouncing M&amacr;ori words correctly and confidently.</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6"><h3><strong>Please type a M&amacr;ori word</strong></h3></div>
+            <form action="/add" accept-charset="UTF-8" method="post"></form>
+                <div class="given-word"><input placeholder="Kupu M&amacr;ori" type="text" name="word" /></div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="submit"><input id="submit" type="submit" name="submit"/></div>
+            </div>    
+        </div>
+
+        <div>
+            <ul>
+            {{#each words}}
+            <li>{{name}} ({{pronunciation}}) {{filename}}</li>
+            {{/each}}
+            </ul>
+        </div>
+
+    </div>
+  </body>
+</html>

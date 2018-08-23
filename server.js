@@ -1,8 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
-
-const userRoutes = require('./routes/users')
-
+const userRoutes = require('./routes/maori_words')
 const server = express()
 
 // Middleware

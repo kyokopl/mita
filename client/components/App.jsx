@@ -1,33 +1,31 @@
 import React from 'react'
 
-import Cats from './Cats'
-import AddCat from './AddCat'
+import Words from './Words'
 
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cats: [
-        {name: 'Engie'},
-        {name: 'Harrison'},
-        {name: 'Kelly'}
-      ]
+      words: [
+        {
+            word: "Kia ora",
+            pronunciation: "Key-ah-orr-rah",
+            file_name: "sound clip"
+        },
+        {
+            word: "Haere mai",
+            pronunciation: "Hi-reh-my",
+            file_name: "sound clip"
+        }]
     }
-    this.addCat = this.addCat.bind(this)
-  }
-  addCat(cat) {
-    const cats = this.state.cats
-    cats.push(cat)
-    this.setState({cats})
-  }
+     }
   render() {
-    const {cats} = this.state
+    const {words} = this.state
     return (
       <div className='app-container section'>
-        <h1>Hello World</h1>
-        <Cats cats={cats} />
-        <AddCat addCat={this.addCat} />
+        <h1>MITA - M&amacr;ori Pronunciation</h1>
+        <Words words={words} />
       </div>
     )
   }

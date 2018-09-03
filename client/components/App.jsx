@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Words from './Words'
+import Home from './Home.jsx'
 
 
 class App extends React.Component {
@@ -20,15 +21,21 @@ class App extends React.Component {
         }]
     }
      }
-  render() {
+render () {
     const {words} = this.state
     return (
-      <div className='app-container section'>
-        <h1>MITA - M&amacr;ori Pronunciation</h1>
-        <Words words={words} />
-      </div>
-    )
-  }
-}
+          <div id='main' className='main-container'>
+            <div className='header-container'>
+              <Home />
+            </div>
+            <div className='content-routing'>
+              <Words words={words}/>
+            </div>
+            {/* <Footer /> */}
+          </div>
+        )
+      }
+    }
+
 
 export default App

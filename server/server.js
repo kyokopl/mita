@@ -3,7 +3,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const server = express()
 const db = require('./db/db')
-const request = require('superagent')
 
 
 server.use(bodyParser.json())
@@ -15,6 +14,8 @@ server.get('/v1/words', (req, res) => {
   
     db.getWords()
       .then(words => {
+        console.log('you made it bruh');
+        
         res.json(words)
       })
 

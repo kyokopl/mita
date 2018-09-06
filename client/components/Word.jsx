@@ -1,13 +1,20 @@
 import React from 'react'
-import Words from './Words'
 
-function Word (props) {
+export default class Word extends React.Component {
+  constructor(props){
+    super(props) 
+  }
+
+  render() {
+    const {id, maori_word} = this.props.words
 
   return (
-    <div>
-      <h1 className="title">{props.word.word} goes here!</h1>
-    </div>
+    <React.Fragment>
+      <div className="word-list-item" key={id}>
+        <h1> {maori_word} goes here!</h1>
+      </div>
+    </React.Fragment>
     )
+  }
 }
 
-export default Word

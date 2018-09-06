@@ -1,16 +1,26 @@
-
 import React from 'react'
-
+import ReactDOM from 'react-dom'
 import Word from './Word'
 
-function Words (props) {
-const words = props.words
-    return (
-    
-    <div className="words">
-      {words.map((word, i) => <Word word={word} />)}
-    </div>
-  )
-}
+const words = require('../api/index.js')
 
-export default Words
+export default class Words extends React.Component {
+  constructor(props){
+    super(props) 
+  }
+
+  render() {
+    return (
+      <div className="word-list">
+      <h2>Maori Words</h2>
+        {words.map(word => {
+          return (
+            <ul style={{listStyle: 'none'}}>
+              <Word word={word} />
+            </ul>
+            )
+          })}
+      </div>
+    )
+  }
+}

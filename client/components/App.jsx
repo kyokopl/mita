@@ -1,5 +1,6 @@
 import React from 'react'
 import Words from './Words'
+import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
 import {HashRouter as Router, Route} from 'react-router-dom'
@@ -11,7 +12,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      words: [],
+      wordsList: [],
+      result: {}
+
     }
     this.getWords = this.getWords.bind(this)
   }
@@ -20,19 +23,31 @@ export default class App extends React.Component {
     this.getWords()
   }
 
-    getWords() {
-      return request.get(wordsUrl)
-      .then(res => {
-        this.setState({
-          words: res.body
-        })
-    })}
+  getWords() {
+    return request.get(wordsUrl)
+    .then(res => {
+      this.setState({
+        wordsList: res.body
+      })
+  })}
 
-    searchWords(query){
-      console.log("Our App knows the query: " + query)
+  searchWords(query){
+    if (!query.length){
+      this.setState({result: {}})
+      return
     }
-  
+    let maoriWord = this.state.wordsList.find((word) => {
+      return word.maori_word.toLowerCase().includes(query.toLowerCase()) 
+
+    });
+    console.log(maoriWord)
+    if (maoriWord) {
+      this.setState({result: maoriWord})
+    }
+  }
+
 render () {
+  console.log(this.state)
     return (
         <Router>
           <React.Fragment>
@@ -40,9 +55,10 @@ render () {
               {/* <div onLoad={this.getWords}></div> */}
               <div className='header-container'>
               <Route path="/" component={Home} />
-              {/* <Words words={this.state.words} /> */}
+              {/* <Words words={this.state.wordsList} /> */}
               <SearchWord searchWords={this.searchWords.bind(this)}/>
               </div>
+              <Word word={this.state.result}/>
             </div>
           </React.Fragment>
         </Router>

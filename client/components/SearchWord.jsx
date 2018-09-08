@@ -10,8 +10,8 @@ class SearchWord extends React.Component {
     return (
       <div className="row">
         <div className="input-field">
-          <label>Rapua..</label>
-          <input type="text" onKeyUp={this.handleSearch.bind(this)}/>
+          <label>Search</label>
+          <input placeholder="Rapua..." type="text" onKeyUp={this.handleSearch.bind(this)}/>
         </div>
       </div>
     )

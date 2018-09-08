@@ -3,6 +3,7 @@ import Words from './Words'
 import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
+import WordSound from './WordSound'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import request from 'superagent'
 
@@ -13,9 +14,9 @@ export default class App extends React.Component {
     super(props)
     this.state = {
       wordsList: [],
-      result: {}
-
+      result: {},
     }
+
     this.getWords = this.getWords.bind(this)
   }
 
@@ -40,25 +41,24 @@ export default class App extends React.Component {
       return word.maori_word.toLowerCase().includes(query.toLowerCase()) 
 
     });
-    console.log(maoriWord)
     if (maoriWord) {
       this.setState({result: maoriWord})
     }
   }
 
-render () {
-  console.log(this.state)
+  render () {
+
     return (
         <Router>
           <React.Fragment>
             <div id='main' className='main-container'>
-              {/* <div onLoad={this.getWords}></div> */}
               <div className='header-container'>
               <Route path="/" component={Home} />
               {/* <Words words={this.state.wordsList} /> */}
               <SearchWord searchWords={this.searchWords.bind(this)}/>
               </div>
-              <Word word={this.state.result}/>
+              <Word word={this.state.result} />
+              <WordSound word={this.state.result} />
             </div>
           </React.Fragment>
         </Router>

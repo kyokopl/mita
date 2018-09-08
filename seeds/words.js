@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
         {id: 27, maori_word: 'Puku', pronunciation: '', filename: ''},
         {id: 28, maori_word: 'Ringa', pronunciation: '', filename: ''},
         {id: 29, maori_word: 'Waewae', pronunciation: '', filename: ''},
-        {id: 30, maori_word: 'Whakarongo', pronunciation: '', filename: ''},
+        {id: 30, maori_word: 'Whakarongo', pronunciation: 'Fark-ah-roh-ngoh', filename: "https://drive.google.com/uc?export=download&id=1VZhPiGOb6CuI6ZLw1wzzITt-1Lv4EH7r"},
         {id: 31, maori_word: 'Hōha', pronunciation: '', filename: ''},
         {id: 32, maori_word: 'Paru', pronunciation: '', filename: ''},
       ]);

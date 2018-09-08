@@ -8,19 +8,6 @@ export default class Words extends React.Component {
     super(props) 
     this.state = {}
   }
-  //     showJobId: null,
-  //     data: this.props.data
-  //   }
-  //   this.handleClick = this.handleClick.bind(this)
-  //   console.log(this.state.data);
-    
-  // }
-
-  // handleClick(showJobId){
-  //   this.setState(prevState => ({
-  //     showJobId: prevState.showJobId == showJobId ? null : showJobId
-  //   }));
-  // }
 
   render() {
     return (
@@ -38,9 +25,3 @@ export default class Words extends React.Component {
   }
 }
 
-
-          //  {this.props.data.body.map(jobInfo => {
-          //   return (
-          //     <div className="listings">
-          //       <li><img className="logo" src={jobInfo.company_logo}></img><a onClick={() => this.handleClick(jobInfo.id)}>{jobInfo.title}</a>
-          //       {this.state.showJobId == jobInfo.id && <Job key={jobInfo.id} job={jobInfo}/>}</li>

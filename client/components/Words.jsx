@@ -2,13 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Word from './Word'
 
-// const words = require('../api/index.js')
-
 export default class Words extends React.Component {
   constructor(props){
     super(props) 
-  
-  console.log(props);
   }
 
   render() {
@@ -18,7 +14,7 @@ export default class Words extends React.Component {
         {this.props.words.map(word => {
           return (
             <ul style={{listStyle: 'none'}}>
-            <li>{word.maori_word}</li>
+            <li>{word.maori_word} {word.pronunciation} {word.filename}</li>
               {/* <Word word={word} /> */}
             </ul>
             )

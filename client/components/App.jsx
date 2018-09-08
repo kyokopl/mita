@@ -1,11 +1,13 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
+import request from 'superagent'
+
 import Words from './Words'
 import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
 import WordSound from './WordSound'
-import {HashRouter as Router, Route} from 'react-router-dom'
-import request from 'superagent'
+
 
 const wordsUrl = 'http://localhost:3000/v1/words'
 
@@ -53,12 +55,13 @@ export default class App extends React.Component {
           <React.Fragment>
             <div id='main' className='main-container'>
               <div className='header-container'>
-              <Route path="/" component={Home} />
-              {/* <Words words={this.state.wordsList} /> */}
-              <SearchWord searchWords={this.searchWords.bind(this)}/>
+                <Route path="/" component={Home} />
+                  <div className="jumbotron">
+                    <SearchWord searchWords={this.searchWords.bind(this)}/>
+                  </div>
+                  <Word word={this.state.result} />
+                  <WordSound word={this.state.result} />
               </div>
-              <Word word={this.state.result} />
-              <WordSound word={this.state.result} />
             </div>
           </React.Fragment>
         </Router>

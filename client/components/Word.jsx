@@ -9,8 +9,8 @@ export default class Word extends React.Component {
 
 
        <div className="wordDetail">
-       <h2>{this.props.word.maori_word}</h2>
-        {this.props.word.pronunciation}<br/>
+       <p>{this.props.word.maori_word}</p>
+       <p>{this.props.word.pronunciation}<br/></p>
        </div>
       
     )

@@ -10,7 +10,7 @@ export default class WordSound extends React.Component {
 
     return (
 
-  <audio controls>
+  <audio controls className="justify-content-center">
     <source src={this.props.word.filename} type="audio/mpeg" />
   </audio>
     );

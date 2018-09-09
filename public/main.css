@@ -95,25 +95,49 @@ img{
     max-width:100px;
     margin-right: 20px
 }
-
-h1, h2, h3, h4, p, .input-field{
-    color: white;
+.description {
+    color: #019e91;
     text-align: center;
     margin: 0 auto;
     padding: 15px;
 }
 
-input {
-    color: dimgray
+p {
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
 }
 
-input, audio {
-    margin-top: 20px;
+
+h1, h2, h3, h4, .input-field{
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 6px;
+}
+
+input {
+    background-color: rgb(221, 226, 224);
+    border-radius: 5px;
+    margin-top: 10px;
     font-size: 2em;
+}
+
+audio {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+
 }
 
 .logo {
     margin:  auto;
     max-width: 400px;
     padding: 20px;
+}
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
 }

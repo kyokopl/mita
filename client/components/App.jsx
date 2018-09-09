@@ -7,6 +7,8 @@ import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
 import WordSound from './WordSound'
+import Guide from './Guide'
+import NavBar from './NavBar'
 
 
 const wordsUrl = 'http://localhost:3000/v1/words'
@@ -63,6 +65,7 @@ export default class App extends React.Component {
                   <WordSound word={this.state.result} />
               </div>
             </div>
+            <Route path="/Guide" component={Guide} />
           </React.Fragment>
         </Router>
         )

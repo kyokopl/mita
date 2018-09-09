@@ -7,8 +7,15 @@ function getWords (testConn) {
     const conn = testConn || connection
     return conn('words')
     .select()
-  }
+}
+
+function getPlaces (testConn) {
+    const conn = testConn || connection
+    return conn('places')
+    .select()
+}
 
 module.exports = {
-    getWords : getWords
+    getWords: getWords,
+    getPlaces : getPlaces
 }

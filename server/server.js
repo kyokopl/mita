@@ -10,11 +10,17 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 
 server.get('/v1/words', (req, res) => {
-    db.getWords()
-      .then(words => {
-        res.json(words)
-      })
+  db.getWords()
+    .then(words => {
+      res.json(words)
+    })
+})
 
+server.get('/v1/places', (req, res) => {
+  db.getPlaces()
+    .then(places => {
+      res.json(places)
+    })
 })
 
 module.exports = server

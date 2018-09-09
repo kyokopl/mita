@@ -1,10 +1,11 @@
 import React from 'react'
-// import {ButtonToolbar, Button} from 'react-bootstrap'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function Guide () {
+
   return (
-    <div className='box'>
+      
+    <div className='guide'>
         <h1>Te reo Māori pronunciation guide </h1><br/>
         <h3>Learn to pronounce Māori words correctly to become more confident using them. Find out how to pronounce Māori vowels, consonants and digraphs.</h3>
         <ul> 
@@ -66,16 +67,6 @@ function Guide () {
                 For further information about reo Māori pronunciation visit the <a href="http://www.tewikiotereomaori.co.nz/">Kōrero Māori</a> website.
                 Information sourced from <a href="https://www.victoria.ac.nz/maori-at-victoria/ako/te-reo-at-victoria/te-reo-pronunciation-guide">Victoria University</a>
             </p>
-
-        {/* <div id="buttonsMain">
-        <ButtonToolbar>
-          <Link id = "list" to = "/Package">
-            <Button id= "button2" bsStyle="primary" bsSize="large" >
-              Order now
-            </Button>
-          </Link>
-        </ButtonToolbar>
-      </div> */}
     </div>
   )
 }

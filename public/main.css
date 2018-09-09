@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-ul {
+.nav-container.ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -114,6 +114,16 @@ h1, h2, h3, h4, .input-field{
     text-align: center;
     margin: 0 auto;
     padding: 6px;
+}
+
+button {
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+button.active {
+    background-color: #019e91;
 }
 
 input {

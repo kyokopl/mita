@@ -9,8 +9,10 @@ export default function CategoryButton(props) {
         <div className="container">
             <div className="row">
                 <div className="col-sm-12">
-                    <button className={`btn-words ${activeWordsClass}`}  onClick={(e) => props.onChange('words')}>Words</button>
-                    <button className={`btn-places ${activePlacesClass}`}   onClick={(e) => props.onChange('places')}>Places</button>
+                    <div className="button-container">
+                        <button className={`btn-words ${activeWordsClass}`}  onClick={(e) => props.onChange('words')}>Words</button>
+                        <button className={`btn-places ${activePlacesClass}`}   onClick={(e) => props.onChange('places')}>Places</button>
+                    </div>
                 </div>
             </div>
         </div>

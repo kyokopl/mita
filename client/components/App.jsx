@@ -49,7 +49,6 @@ export default class App extends React.Component {
       this.setState({
         placesList: res.body
       })
-      console.log(this.state.placesList)
   })}
 
   searchWords(query){

@@ -29,13 +29,12 @@
     background-color: #333;
 }
 
-ul {
+.nav-container ul {
     list-style-type: none;
 }
 
-li {
+.nav-container li {
     float: left;
-    list-style-type: none;
 }
 
 li a, .dropbtn {
@@ -91,8 +90,45 @@ li.dropdown {
     margin: 0 auto;
   }
 
-.jumbotron {
-    background-color: #3b3b3b;
+#banner {
+    padding: 170px;
+    background-size: 96% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: #fff;
+}
+
+.guide {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+h1.special {
+    text-align: left;
+    color: white;
+}
+
+p.descript {
+    padding: 40px;
+}
+
+p {
+    margin: 0 auto;
+    padding: 8px;
+    padding-top: 15px;
+}
+
+h2, h5 {
+    color: rgb(0, 0, 0);
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1, h3, h4 {
+    color: rgb(66, 66, 66);
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 img{
@@ -100,68 +136,22 @@ img{
     max-width:100px;
     margin-right: 20px
 }
-.description {
-    color: #019e91;
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
-}
 
-p {
-    text-align: center;
-    margin: 0 auto;
-    padding: 15px;
-}
-
-
-h1, h2, h3, h4, .input-field{
-    color: white;
-    text-align: center;
-    margin: 0 auto;
-    padding: 6px;
-}
-
-button {
-    border-radius: 3px;
-    margin-top: 0 auto;
-    font-size: 1.5em;
-    background-color: rgb(221, 226, 224);
-    text-align: center;
-}
-
-button.active {
-    background-color: #019e91;
-}
-
-.button-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-input {
-    background-color: rgb(221, 226, 224);
-    border-radius: 5px;
-    margin-top: 10px;
-    font-size: 2em;
-}
-
-audio {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-
-}
-
-.logo {
-    margin:  auto;
-    max-width: 400px;
-    padding: 20px;
+.fern{
+    max-width: 100%;
+    margin: 20px;
+    padding: 10px;
+    position: relative;
 }
 
 .footer {
     margin: 0 auto;
     text-align: center;
+    padding: 10px;
 }
+
+/* .logo {
+    margin:  auto;
+    max-width: 400px;
+    padding: 20px;
+} */

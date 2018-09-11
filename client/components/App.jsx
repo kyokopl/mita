@@ -7,10 +7,11 @@ import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
 import WordSound from './WordSound'
-import Guide from './Guide'
+// import Guide from './Guide'
 // import NavBar from './NavBar'
 import Place from './Place'
 import CategoryButton from './CategoryButton'
+import AddWord from './AddWord'
 
 
 const wordsUrl = 'http://localhost:3000/v1/words'
@@ -28,6 +29,7 @@ export default class App extends React.Component {
 
     this.getWords = this.getWords.bind(this)
     this.getPlaces = this.getPlaces.bind(this)
+    this.addWord = this.addWord.bind(this)
   }
 
   componentDidMount() {
@@ -73,6 +75,13 @@ export default class App extends React.Component {
     else this.setState({result: {}})
   }
 
+  addWord(word) {
+    const words = this.state.wordsList
+    console.log(words)
+    words.push(word)
+    this.setState({words})
+  }
+
   render () {
 
     return (
@@ -91,9 +100,10 @@ export default class App extends React.Component {
                     : <Place place={this.state.result} />
                   }
                   <WordSound word={this.state.result} />
+                  <AddWord addWord={this.addWord}/>
               </div>
             </div>
-            <Route path="/Guide" component={Guide} />
+            {/* <Route path="/Guide" component={Guide} /> */}
           </React.Fragment>
         </Router>
         )

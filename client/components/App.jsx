@@ -2,18 +2,14 @@ import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import request from 'superagent'
 
-// import Words from './Words'
 import Word from './Word'
 import Home from './Home.jsx'
 import SearchWord from './SearchWord'
 import WordSound from './WordSound'
-// import Guide from './Guide'
-// import NavBar from './NavBar'
 import Place from './Place'
 import CategoryButton from './CategoryButton'
 import AddWord from './AddWord'
 import AddPlace from './AddPlace'
-import AddOwnButton from './AddOwnButton'
 
 
 const wordsUrl = 'http://localhost:3000/v1/words'
@@ -27,15 +23,16 @@ export default class App extends React.Component {
       wordsList: [],
       result: {},
       category: 'words',
-      // add: 'words',
-      // addWordVisible: false,
-      // addPlaceVisible: false,
+      addWordVisible: false,
+      addPlaceVisible: false,
     }
 
     this.getWords = this.getWords.bind(this)
     this.getPlaces = this.getPlaces.bind(this)
-    // this.addWord = this.addWord.bind(this)
-    // this.addPlace = this.addPlace.bind(this)
+    this.addWord = this.addWord.bind(this)
+    this.addPlace = this.addPlace.bind(this)
+    this.showAddWord = this.showAddWord.bind(this)
+    this.showAddPlace = this.showAddPlace.bind(this)
   }
 
   componentDidMount() {
@@ -85,29 +82,39 @@ export default class App extends React.Component {
     else this.setState({result: {}})
   }
 
-  // showAddWord () {
-  //   this.setState({
-  //     addWordVisible: true
-  //   })
-  // }
+  showAddWord () {
+    console.log(this.state)
+    this.setState({
+      addWordVisible: true
+    })
+  }
 
-  // showAddplace () {
-  //   this.setState({
-  //     addPlaceVisible: true
-  //   })
-  // }
+  showAddPlace () {
+    console.log(this.state)
+    this.setState({
+      addPlaceVisible: true
+    })
+  }
 
-  // addWord(word) {
-  //   const words = this.state.wordsList
-  //   words.push(word)
-  //   this.setState({words})
-  // }
+  hideAddButtons (){
+    if (this.state.addWordVisible === true) {
+      this.setState({addPlacesVisible: false})
+    }
+    else this.setState({addWordsVisible: false})
+  }
 
-  // addPlace(place) {
-  //   const places = this.state.placeList
-  //   places.push(place)
-  //   this.setState({places})
-  // }
+  addWord(word) {
+    const words = this.state.wordsList
+    words.push(word)
+    this.setState({words})
+  }
+
+  addPlace(place) {
+    const places = this.state.placesList
+    places.push(place)
+    this.setState({places})
+    console.log(places)
+  }
 
   render () {
 
@@ -127,15 +134,17 @@ export default class App extends React.Component {
                     : <Place place={this.state.result} />
                   }
                   <WordSound sound={this.state.result} />
-                  {/* <AddOwnButton onChange={add => this.setState({add})} activeAdd={this.state.add} />
+                 <button onClick={this.showAddWord}>Add Word</button>
+                 <button onClick={this.showAddPlace}>Add Place</button>
                   {
-                    (this.state.add === 'words')
-                    ? this.state.addWordVisible && <AddWord addWord={this.addWord}/>
-                    : this.state.addPlaceVisible &&<AddPlace addPlace={this.addPlace}/>
-                  } */}
+
+                    this.state.addWordVisible && <AddWord addWord={this.addWord}/>
+                  }
+                  {
+                    this.state.addPlaceVisible &&<AddPlace addPlace={this.addPlace}/>
+                  } 
               </div>
             </div>
-            {/* <Route path="/Guide" component={Guide} /> */}
           </React.Fragment>
         </Router>
         )

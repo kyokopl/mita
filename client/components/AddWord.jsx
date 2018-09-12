@@ -25,12 +25,14 @@ export default class AddWord extends React.Component {
   }
   render() {
     return (
+      <div>
       <form onSubmit={this.onSubmit}>
         <input onChange={this.updateDetails} className={`input ${this.state.maori_word.length > 5 ? 'is-success' : 'is-danger'}`} type="text" name="maori_word" placeholder="Word" />
         <input onChange={this.updateDetails} className="input" type="text" name="pronunciation" placeholder="Pronunciation" />
         <input onChange={this.updateDetails} className="input" type="text" name="filename" placeholder="Sound File" />
         <input className="button is-success" type="submit" />
       </form>
+      </div>
     )
   }
 }

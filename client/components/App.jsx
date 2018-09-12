@@ -12,6 +12,8 @@ import WordSound from './WordSound'
 import Place from './Place'
 import CategoryButton from './CategoryButton'
 import AddWord from './AddWord'
+import AddPlace from './AddPlace'
+import AddOwnButton from './AddOwnButton'
 
 
 const wordsUrl = 'http://localhost:3000/v1/words'
@@ -24,12 +26,16 @@ export default class App extends React.Component {
       placesList: [],
       wordsList: [],
       result: {},
-      category: 'words'
+      category: 'words',
+      // add: 'words',
+      // addWordVisible: false,
+      // addPlaceVisible: false,
     }
 
     this.getWords = this.getWords.bind(this)
     this.getPlaces = this.getPlaces.bind(this)
-    this.addWord = this.addWord.bind(this)
+    // this.addWord = this.addWord.bind(this)
+    // this.addPlace = this.addPlace.bind(this)
   }
 
   componentDidMount() {
@@ -58,6 +64,8 @@ export default class App extends React.Component {
       this.setState({result: {}})
       return
     }
+    // condition to change category search result
+
     let result
     if (this.state.category === 'words') {
        result = this.state.wordsList.find((word) => {
@@ -68,19 +76,38 @@ export default class App extends React.Component {
           return place.name.toLowerCase().includes(query.toLowerCase()) 
         });
       }
-    
+
+    // condition if there is a result, display it otherwise display nothing
+
     if (result) {
       this.setState({result: result})
     }
     else this.setState({result: {}})
   }
 
-  addWord(word) {
-    const words = this.state.wordsList
-    console.log(words)
-    words.push(word)
-    this.setState({words})
-  }
+  // showAddWord () {
+  //   this.setState({
+  //     addWordVisible: true
+  //   })
+  // }
+
+  // showAddplace () {
+  //   this.setState({
+  //     addPlaceVisible: true
+  //   })
+  // }
+
+  // addWord(word) {
+  //   const words = this.state.wordsList
+  //   words.push(word)
+  //   this.setState({words})
+  // }
+
+  // addPlace(place) {
+  //   const places = this.state.placeList
+  //   places.push(place)
+  //   this.setState({places})
+  // }
 
   render () {
 
@@ -99,8 +126,13 @@ export default class App extends React.Component {
                     ? <Word word={this.state.result} />
                     : <Place place={this.state.result} />
                   }
-                  <WordSound word={this.state.result} />
-                  <AddWord addWord={this.addWord}/>
+                  <WordSound sound={this.state.result} />
+                  {/* <AddOwnButton onChange={add => this.setState({add})} activeAdd={this.state.add} />
+                  {
+                    (this.state.add === 'words')
+                    ? this.state.addWordVisible && <AddWord addWord={this.addWord}/>
+                    : this.state.addPlaceVisible &&<AddPlace addPlace={this.addPlace}/>
+                  } */}
               </div>
             </div>
             {/* <Route path="/Guide" component={Guide} /> */}

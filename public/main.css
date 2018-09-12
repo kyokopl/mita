@@ -140,11 +140,29 @@ button.active {
     transform: translate(-50%, -50%);
 }
 
-input {
+.add-word {
+    background-color: rgb(221, 226, 224);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+input{
     background-color: rgb(221, 226, 224);
     border-radius: 5px;
     margin-top: 10px;
     font-size: 2em;
+}
+
+.input-add {
+    background-color: rgb(221, 226, 224);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1em;
 }
 
 audio {

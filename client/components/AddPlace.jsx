@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col, FormGroup } from 'reactstrap';
 
 export default class AddPlace extends React.Component {
   constructor(props) {
@@ -24,12 +25,18 @@ export default class AddPlace extends React.Component {
   }
   render() {
     return (
+      <div className="row">
+      <div className="input-field">
       <form onSubmit={this.onSubmit}>
-        <input onChange={this.updateDetails} className={`input ${this.state.name.length > 5 ? 'is-success' : 'is-danger'}`} type="text" name="name" placeholder="Place" />
-        <input onChange={this.updateDetails} className="input" type="text" name="pronunciation" placeholder="Pronunciation" />
-        <input onChange={this.updateDetails} className="input" type="text" name="filename" placeholder="Sound File" />
-        <input className="button is-success" type="submit" />
+      <FormGroup>
+      <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="name" placeholder="Place" /></Col>
+      <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="pronunciation" placeholder="Pronunciation" /></Col>
+      <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="filename" placeholder="Sound File" /></Col>
+      <Col><input className="btn btn-light" type="submit" /></Col>
+      </FormGroup>
       </form>
+      </div>
+      </div>
     )
   }
 }

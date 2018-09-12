@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col, FormGroup } from 'reactstrap';
 
 export default class AddWord extends React.Component {
   constructor(props) {
@@ -26,13 +27,19 @@ export default class AddWord extends React.Component {
   render() {
     return (
       <div>
+        <div className="row">
+        <div className="input-field">
       <form onSubmit={this.onSubmit}>
-        <input onChange={this.updateDetails} className={`input ${this.state.maori_word.length > 5 ? 'is-success' : 'is-danger'}`} type="text" name="maori_word" placeholder="Word" />
-        <input onChange={this.updateDetails} className="input" type="text" name="pronunciation" placeholder="Pronunciation" />
-        <input onChange={this.updateDetails} className="input" type="text" name="filename" placeholder="Sound File" />
-        <input className="button is-success" type="submit" />
+      <FormGroup>
+        <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="maori_word" placeholder="Word" /></Col>
+        <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="pronunciation" placeholder="Pronunciation" /></Col>
+        <Col><input onChange={this.updateDetails} className="btn btn-light" type="text" name="filename" placeholder="Sound File" /></Col>
+        <Col><input className="btn btn-light" type="submit" /></Col>
+        </FormGroup>
       </form>
       </div>
+      </div>
+            </div>
     )
   }
 }

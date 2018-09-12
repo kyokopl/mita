@@ -10,8 +10,8 @@ export default function CategoryButton(props) {
             <div className="row">
                 <div className="col-sm-12">
                     <div className="button-container">
-                        <button className={`btn-words ${activeWordsClass}`}  onClick={(e) => props.onChange('words')}>Words</button>
-                        <button className={`btn-places ${activePlacesClass}`}   onClick={(e) => props.onChange('places')}>Places</button>
+                        <button className={`btn btn ${activeWordsClass}`}  onClick={(e) => props.onChange('words')}>Words</button>
+                        <button className={`btn btn ${activePlacesClass}`}   onClick={(e) => props.onChange('places')}>Places</button>
                     </div>
                 </div>
             </div>

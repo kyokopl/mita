@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack && node server",
     "dev": "node server & webpack --watch",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "postinstall": "webpack && knex migrate:latest"
   },
   "babel": {
     "presets": [
@@ -26,6 +27,7 @@
     "babel-register": "^6.26.0",
     "express": "^4.16.2",
     "knex": "^0.15.2",
+    "pg": "^7.4.3",
     "react": "^16.4.2",
     "react-audio-player": "^0.10.0",
     "react-bootstrap": "^0.32.4",
